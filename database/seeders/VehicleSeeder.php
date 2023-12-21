@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Track;
+use App\Models\Vehicle;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class TrackSeeder extends Seeder
+class VehicleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Track::factory('5')->create();
+        Vehicle::factory(5)->create();
     }
 }

@@ -4,8 +4,9 @@ use App\Http\Controllers\AlbumController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\SiteController;
-use App\Http\Controllers\ArtistController;
-use App\Http\Controllers\TrackController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,13 +21,21 @@ use App\Http\Controllers\TrackController;
 
 Route::get('/', [SiteController::class, 'home'])->name('home');
 
-Route::get('/artist', [ArtistController::class, 'artist'])->name('artists');
-Route::get('/artist/create', [ArtistController::class, 'create']);
-Route::post('/artists/create', [ArtistController::class, 'store']);
-Route::get('/artists/{artist}', [ArtistController::class, 'edit']);
-Route::post('/artists/{artist}', [ArtistController::class, 'update']);
+Route::get('/customer', [CustomerController::class, 'index'])->name('index');
+Route::get('/customer/create', [CustomerController::class, 'create']);
+Route::post('/customers/create', [CustomerController::class, 'store']);
+Route::get('/customers/{artist}', [CustomerController::class, 'edit']);
+Route::post('/customers/{artist}', [CustomerController::class, 'update']);
 
-Route::get('/album', [AlbumController::class, 'album'])->name('albums');
+Route::get('/orders', [OrderController::class, 'index'])->name('index');
+Route::get('/order/create', [OrderController::class, 'create']);
+Route::post('/orders/create', [OrderController::class, 'store']);
+Route::get('/orders/{vehicle}', [OrderController::class, 'edit']);
+Route::post('/orders/{vehicle}', [OrderController::class, 'update']);
 
-Route::get('/track', [TrackController::class, 'track'])->name('albums');
+Route::get('/vehicle', [VehicleController::class, 'index'])->name('index');
+Route::get('/vehicle/create', [VehicleController::class, 'create']);
+Route::post('/vehicles/create', [VehicleController::class, 'store']);
+Route::get('/vehicles/{vehicle}', [VehicleController::class, 'edit']);
+Route::post('/vehicles/{vehicle}', [VehicleController::class, 'update']);
 

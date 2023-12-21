@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Album;
+use App\Models\Order;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class AlbumSeeder extends Seeder
+class OrderSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Album::factory('5')->create();
+        Order::factory(5)->create();
     }
 }

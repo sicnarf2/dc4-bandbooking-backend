@@ -2,9 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ArtistController;
-use App\Http\Controllers\AlbumController;
-use App\Http\Controllers\TrackController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\VehicleController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,23 +21,23 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/artists/{artist}',[ArtistController::class, 'view']);
-Route::patch('/artists/{artist}',[ArtistController::class, 'update']);
-Route::put('/artists/{artist}',[ArtistController::class, 'update']);
-Route::delete('/artists/{artist}',[ArtistController::class, 'destroy']);
-Route::get('/artists',[ArtistController::class, 'index']);
-Route::post('/artists',[ArtistController::class, 'store']);
+Route::get('/customers/{customer}',[CustomerController::class, 'view']);
+Route::patch('/customers/{customer}',[CustomerController::class, 'update']);
+Route::put('/customers/{customer}',[CustomerController::class, 'update']);
+Route::delete('/customers/{customer}',[CustomerController::class, 'destroy']);
+Route::get('/customers',[CustomerController::class, 'index']);
+Route::post('/customers',[CustomerController::class, 'store']);
 
-Route::get('/albums/{album}',[AlbumController::class, 'view']);
-Route::patch('/albums/{album}',[AlbumController::class, 'update']);
-Route::put('/albums/{album}',[AlbumController::class, 'update']);
-Route::delete('/albums/{album}',[AlbumController::class, 'destroy']);
-Route::get('/albums',[AlbumController::class, 'index']);
-Route::post('/albums',[AlbumController::class, 'store']);
+Route::get('/vehicles/{vehicle}',[VehicleController::class, 'view']);
+Route::patch('/vehicles/{vehicle}',[VehicleController::class, 'update']);
+Route::put('/vehicles/{vehicle}',[VehicleController::class, 'update']);
+Route::delete('/vehicles/{vehicle}',[VehicleController::class, 'destroy']);
+Route::get('/vehicles',[VehicleController::class, 'vehicle']);
+Route::post('/vehicles',[VehicleController::class, 'store']);
 
-Route::get('/tracks/{track}',[TrackController::class, 'view']);
-Route::patch('/tracks/{track}',[TrackController::class, 'update']);
-Route::put('/tracks/{track}',[TrackController::class, 'update']);
-Route::delete('/tracks/{track}',[TrackController::class, 'destroy']);
-Route::get('/tracks',[TrackController::class, 'track']);
-Route::post('/tracks',[TrackController::class, 'store']);
+Route::get('/orders/{order}',[OrderController::class, 'view']);
+Route::patch('/orders/{order}',[OrderController::class, 'update']);
+Route::put('/orders/{order}',[OrderController::class, 'update']);
+Route::delete('/orders/{order}',[OrderController::class, 'destroy']);
+Route::get('/orders',[OrderController::class, 'index']);
+Route::post('/orders',[OrderController::class, 'store']);
