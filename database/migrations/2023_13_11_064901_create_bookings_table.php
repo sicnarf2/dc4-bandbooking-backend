@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('customer_id')->references('id')->on('customers')->onDelete('cascade');
-            $table->foreignId('vehicle_id')->unsigned()->references('id')->on('vehicles')->onDelete('cascade');
-
-            $table->integer('quantity');
-            $table->float('total_amount');
+            $table->date('booking_date');
             $table->timestamps();
         });
     }
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('bookings');
     }
 };

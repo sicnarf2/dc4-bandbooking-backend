@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('bands', function (Blueprint $table) {
             $table->id();
-            $table->string('fullname');
-            $table->string('address');
-            $table->string('email');
-            $table->string('phoneNumber');
+            $table->string('band_name');
+            $table->string('genre');
+            $table->date('year_started');
+            $table->integer('membersCount');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customers');
+        Schema::dropIfExists('bands');
     }
 };

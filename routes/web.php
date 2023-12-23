@@ -4,9 +4,9 @@ use App\Http\Controllers\AlbumController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\SiteController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\VehicleController;
-use App\Http\Controllers\OrderController;
+use App\Http\Controllers\BandController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\BookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,21 +21,21 @@ use App\Http\Controllers\OrderController;
 
 Route::get('/', [SiteController::class, 'home'])->name('home');
 
-Route::get('/customer', [CustomerController::class, 'index'])->name('index');
-Route::get('/customer/create', [CustomerController::class, 'create']);
-Route::post('/customers/create', [CustomerController::class, 'store']);
-Route::get('/customers/{artist}', [CustomerController::class, 'edit']);
-Route::post('/customers/{artist}', [CustomerController::class, 'update']);
+Route::get('/band', [BandController::class, 'index'])->name('index');
+Route::get('/band/create', [BandController::class, 'create']);
+Route::post('/band/create', [BandController::class, 'store']);
+Route::get('/band/{artist}', [BandController::class, 'edit']);
+Route::post('/band/{artist}', [BandController::class, 'update']);
 
-Route::get('/orders', [OrderController::class, 'index'])->name('index');
-Route::get('/order/create', [OrderController::class, 'create']);
-Route::post('/orders/create', [OrderController::class, 'store']);
-Route::get('/orders/{vehicle}', [OrderController::class, 'edit']);
-Route::post('/orders/{vehicle}', [OrderController::class, 'update']);
+Route::get('/booking', [BookingController::class, 'index'])->name('index');
+Route::get('/booking/create', [BookingController::class, 'create']);
+Route::post('/booking/create', [BookingController::class, 'store']);
+Route::get('/booking/{user}', [BookingController::class, 'edit']);
+Route::post('/booking/{user}', [BookingController::class, 'update']);
 
-Route::get('/vehicle', [VehicleController::class, 'index'])->name('index');
-Route::get('/vehicle/create', [VehicleController::class, 'create']);
-Route::post('/vehicles/create', [VehicleController::class, 'store']);
-Route::get('/vehicles/{vehicle}', [VehicleController::class, 'edit']);
-Route::post('/vehicles/{vehicle}', [VehicleController::class, 'update']);
+Route::get('/user', [UserController::class, 'index'])->name('index');
+Route::get('/user/create', [UserController::class, 'create']);
+Route::post('/user/create', [UserController::class, 'store']);
+Route::get('/user/{user}', [UserController::class, 'edit']);
+Route::post('/user/{user}', [UserController::class, 'update']);
 
